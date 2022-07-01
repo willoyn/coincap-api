@@ -17,7 +17,7 @@ const typeDefs = gql`
     marketCapUsd: String!
     volumeUsd24Hr: String!
     priceUsd: String!
-    chagngePercent24Hr: String
+    changePercent24Hr: String!
     vwap24Hr: String!
     explorer: String
   }
