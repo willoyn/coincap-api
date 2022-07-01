@@ -3,8 +3,8 @@ const { gql } = require("apollo-server");
 const typeDefs = gql`
   type Query {
     "Query to get currencies list from https://api.coincap.io/v2/assets"
-    assets: [Asset!]!
-    assetHistory: [AssetHistory!]!
+    getAssets(offset: Int!, limit: Int): [Asset]!
+    getAssetHistory(id: String!, interval: String!): [AssetHistory!]!
   }
 
   "Currencies list item from https://api.coincap.io/v2/assets"
@@ -17,7 +17,7 @@ const typeDefs = gql`
     marketCapUsd: String!
     volumeUsd24Hr: String!
     priceUsd: String!
-    chagngePercent24Hr: String!
+    chagngePercent24Hr: String
     vwap24Hr: String!
     explorer: String
   }
